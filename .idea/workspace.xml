@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed0bf377-1999-48a5-acf6-7a75770c8913" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/highlight/recommend.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/highlight/recommend.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/qa/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/qa/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/qa/label/_label.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/qa/label/_label.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +117,8 @@
       <workItem from="1577969182632" duration="64000" />
       <workItem from="1577969292005" duration="436000" />
       <workItem from="1577969789359" duration="11790000" />
-      <workItem from="1578020601713" duration="7487000" />
+      <workItem from="1578020601713" duration="7880000" />
+      <workItem from="1578066284693" duration="701000" />
     </task>
     <task id="LOCAL-00001" summary="add articles search">
       <created>1578027473756</created>

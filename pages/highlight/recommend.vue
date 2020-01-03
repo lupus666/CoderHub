@@ -24,6 +24,7 @@
             <div class="data-list">
                 <ul class="headline fixed" id="headline">
                     <li class="headline-item" v-for="(item,index) in articles" :key="index">
+
                         <div class="fl indexImg">
                             <img :src="item.image"/>
                         </div>
@@ -72,19 +73,24 @@
             window.addEventListener('scroll', this.handleScroll, true)
         },
         asyncData(){
-            let searchmap = {"channelid": "0"};
+            let searchmap = {"istop": "1"};
             return axios.all([recommendApi.getRecommends(), imageApi.getImgs(), articleApi.getList(1, 10, searchmap)]).then(
                 axios.spread((res1, res2, res3) => {
-                    console.log(res1.data.data.length);
-                    if (res1.data.data.length <= 5){
-                        let articles = res1.data.data.concat(res3.data.data);
+                    if (res1.data.data.rows === undefined){
+                        return{
+                            articles: res3.data.data.rows,
+                            ima: res2.data.data
+                        }
+                    }
+                    if (res1.data.data.rows.length <= 5){
+                        let articles = res1.data.data.rows.concat(res3.data.data.rows);
                         return {
                             articles: articles,
                             img: res2.data.data
                         }
                     }else{
                         return {
-                            articles: res1.data.data,
+                            articles: res1.data.data.rows,
                             img: res2.data.data
                         }
                     }
