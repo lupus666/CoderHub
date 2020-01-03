@@ -168,7 +168,7 @@
         mounted () {
             window.addEventListener('scroll', this.handleScroll, true)
         },
-        asyncData({params}){
+        asyncData({params, query}){
             return axios.all([problemApi.list('newlist',params.label,1,10),problemApi.list('hotlist',params.label,1,10),problemApi.list('waitlist',params.label,1,10)])
                 .then(axios.spread((newlist,hotlist,waitlist)=>{
                     console.log(params);

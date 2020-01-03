@@ -14,7 +14,7 @@
           </ul>
           <form class="sui-form sui-form pull-left">
               <label>
-                  <input type="text" placeholder="输入关键词..." v-model="keyword">
+                  <input type="text" placeholder="输入文章关键词..." v-model="keyword">
               </label>
               <span class="btn-search fa fa-search" @click="search"/>
           </form>
@@ -95,7 +95,7 @@
             search(){
                 console.log(this.activeChannel);
                 if (this.keyword !== ''){
-                    this.$router.push({path: '/'+this.activeChannel, query:{isvalid: "1", keywords: this.keyword}})
+                    this.$router.push({path: '/highlight', query:{isvalid: "1", keywords: this.keyword}})
                 }
             },
         }

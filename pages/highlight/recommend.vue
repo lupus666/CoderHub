@@ -77,7 +77,7 @@
                 axios.spread((res1, res2, res3) => {
                     console.log(res1.data.data.length);
                     if (res1.data.data.length <= 5){
-                        let articles = res1.data.data + res3.data.data;
+                        let articles = res1.data.data.concat(res3.data.data);
                         return {
                             articles: articles,
                             img: res2.data.data
