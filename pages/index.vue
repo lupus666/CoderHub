@@ -12,12 +12,7 @@ import axios from 'axios'
 import authApi from '@/utils/auth'
   export default {
       created() {
-          if (authApi.getUser() === undefined){
-              this.$router.push("/highlight")
-          }
-          else{
-              this.$router.push("/recommend/")
-          }
+          this.$router.push("/highlight")
       }
   }
 </script>

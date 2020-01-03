@@ -6,16 +6,17 @@
         <div class="navbar-inner">
           <a href="/" class="sui-brand"><img src="~/assets/img/logo.png" style="margin-top: 5px" width="165px" height="80px" alt="社交"/></a>
           <ul class="sui-nav">
-            <nuxt-link tag="li" to="/recommend" active-class="active" v-if="user.name !== undefined"><a>推荐</a></nuxt-link>
-            <nuxt-link tag="li" to="/highlight" active-class="active"><a>文章</a></nuxt-link>
-            <nuxt-link tag="li" to="/qa" active-class="active"><a>问答</a></nuxt-link>
-            <nuxt-link tag="li" to="/gathering" active-class="active"><a>活动</a></nuxt-link>
-            <nuxt-link tag="li" to="/spit" active-class="active"><a>吐槽</a></nuxt-link>
-            <nuxt-link tag="li" to="/recruit" active-class="active"><a>招聘</a></nuxt-link>
+            <nuxt-link tag="li" :to="{ path:'/highlight'}" active-class="active" @click.native="activeChannel='highlight'" ><a>文章</a></nuxt-link>
+            <nuxt-link tag="li" :to="{ path:'/qa'}" active-class="active" @click.native="activeChannel='qa'"><a>问答</a></nuxt-link>
+            <nuxt-link tag="li" :to="{ path:'/gathering'}" active-class="active" @click.native="activeChannel='gathering'"><a>活动</a></nuxt-link>
+            <nuxt-link tag="li" :to="{ path:'/spit'}" active-class="active" @click.native="activeChannel='spit'"><a>吐槽</a></nuxt-link>
+            <nuxt-link tag="li" :to="{ path:'/recruit'}" active-class="active" @click.native="activeChannel='recruit'"><a>招聘</a></nuxt-link>
           </ul>
           <form class="sui-form sui-form pull-left">
-              <input type="text" placeholder="输入关键词...">
-              <span class="btn-search fa fa-search"></span>
+              <label>
+                  <input type="text" placeholder="输入关键词..." v-model="keyword">
+              </label>
+              <span class="btn-search fa fa-search" @click="search"/>
           </form>
           <div class="sui-nav pull-right info" v-if="user.name !== undefined">
             <li><a href="/manager" target="_blank" class="notice">{{user.name}}</a></li>
@@ -78,7 +79,9 @@
     export default {
         data(){
           return {
-              user: {}
+              user: {},
+              activeChannel:'highlight',
+              keyword:''
           }
         },
         created() {
@@ -88,7 +91,13 @@
             logout(){
                 Auth.removeUser();
                 location.href='/';
-            }
+            },
+            search(){
+                console.log(this.activeChannel);
+                if (this.keyword !== ''){
+                    this.$router.push({path: '/'+this.activeChannel, query:{isvalid: "1", keywords: this.keyword}})
+                }
+            },
         }
     }
 </script>

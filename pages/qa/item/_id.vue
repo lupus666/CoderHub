@@ -27,16 +27,6 @@
               {{problem.content}}
             </div>
             <div class="clearfix"></div>
-            <div class="comment-box">
-              <form class="comment-form">
-                <textarea row="1" placeholder="使用评论询问更多信息或提出修改意见，请不要在评论里回答问题"></textarea>
-                <button type="submit" class="sui-btn submit-comment">提交评论</button>
-              </form>
-              <div class="tips">
-                <p>评论支持部分 Markdown 语法：**bold**_italic_[link](http://example.com)> 引用`code`- 列表。 同时，被你 @ 的用户也会收到通知</p>
-              </div>
-            </div>
-
           </div>
 
         </div>
@@ -84,6 +74,7 @@
     import replyApi from "@/api/reply";
     import authApi from "@/utils/auth"
     import problemApi from "@/api/problem";
+    import userApi from "@/api/user";
 
     export default {
         name: "_id",
@@ -95,7 +86,7 @@
         asyncData({params}) {
             return axios.all([problemApi.getProblem(params.id), replyApi.getReplies(params.id)]).then(
                 axios.spread((res1, res2) => {
-                    console.log(res2.data.data.rows.length);
+                    console.log(res2.data.data.rows);
                     return {
                         problem: res1.data.data,
                         replies: res2.data.data.rows,
@@ -104,12 +95,13 @@
                 })
             )
         },
-        methods: {
+        methods: {//TODO: Add scorll function
             onEditorChange({editor, html, text}) {
                 console.log('editor change!', editor, html, text);
                 this.content = html;
             },
             submit() {
+                console.log(new Date().format("yyyy-MM-dd hh:mm:ss"));
                 if (authApi.getUser().name === undefined){
                     this.$message({
                         message: "请先登录再回答",
@@ -118,15 +110,23 @@
                     return
                 }
                 if (this.content) {
-                    replyApi.submit({content: this.content, problemid: this.problemId}).then(response => {
-                        this.$message({
-                            message: response.data.message,
-                            type: (response.data.flag ? 'success' : 'error')
-                        });
-                        if (response.data.flag) {
+                    userApi.getMyInfo().then(res => {
+                      replyApi.submit({
+                            content: this.content,
+                            problemid: this.problemId,
+                            createtime: new Date().format("yyyy-MM-dd hh:mm:ss"),
+                            userid: res.data.data.id,
+                            nickname: res.data.data.nickname
+                      }).then(response => {
+                            this.$message({
+                              message: response.data.message,
+                              type: (response.data.flag ? 'success' : 'error')
+                          });
+                          if (response.data.flag) {
                             this.content="";
                             this.$router.go(0);
-                        }
+                          }
+                        })
                     })
                 } else {
                     this.$message({
@@ -137,6 +137,27 @@
             }
         }
     }
+
+  Date.prototype.format = function(fmt) { 
+      var o = { 
+          "M+" : this.getMonth()+1,                 //月份 
+          "d+" : this.getDate(),                    //日 
+          "h+" : this.getHours(),                   //小时 
+          "m+" : this.getMinutes(),                 //分 
+          "s+" : this.getSeconds(),                 //秒 
+          "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+          "S"  : this.getMilliseconds()             //毫秒 
+      }; 
+      if(/(y+)/.test(fmt)) {
+              fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+      }
+      for(var k in o) {
+          if(new RegExp("("+ k +")").test(fmt)){
+              fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+          }
+      }
+      return fmt; 
+  };
 </script>
 
 <style scoped>

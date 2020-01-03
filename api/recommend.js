@@ -1,10 +1,11 @@
 import request from '@/utils/request'
-const group_name = 'user'
-const api_name = 'recommend'
+const group_name = 'user';
+const api_name = 'recommend';
+
 export default{
-    getRecommends(userId){
+    getRecommends(){
         return request({
-            url: `/${group_name}/${api_name}/${userId}`,
+            url: `/${group_name}/user/${api_name}`,
             method: `get`,
         })
     }

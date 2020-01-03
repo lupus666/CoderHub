@@ -1,7 +1,7 @@
 import request from "@/utils/request";
 
-const group_name = 'qa';
-const api_name = 'reply';
+const group_name = 'qa'
+const api_name = 'reply'
 
 export default {
   getReplies(problemId){

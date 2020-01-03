@@ -4,12 +4,13 @@
       <div class="left-nav">
         <div class="float-nav" id="float-nav">
           <ul class="sui-nav nav-tabs nav-xlarge tab-navbar tab-vertical">
+            <nuxt-link to="/highlight/recommend" tag="li" active-class="active" v-if="user.name !== undefined " exact><a>推荐</a></nuxt-link>
             <nuxt-link to="/highlight/channel/0" tag="li" active-class="active" exact><a>热门</a></nuxt-link>
             <nuxt-link tag="li" :to="`/highlight/channel/${item.id}`" active-class="active" v-for="(item,index) in channellist" :key="index"><a>{{item.name}}</a></nuxt-link>
           </ul>
         </div>
       </div>
-      <nuxt-child></nuxt-child>
+        <nuxt-child/>
       <div class="right-content">
         <div class="fl right">
           <div class="activity">
@@ -66,15 +67,30 @@
     import problemApi from "@/api/problem";
     import gatheringApi from "@/api/gathering";
     import imageApi from "@/api/image";
-    import axios from 'axios'
+    import axios from 'axios';
+    import Auth from "@/utils/auth";
+    import user from "@/api/user";
+
     export default {
+        data(){
+            return{
+                user:{},
+            }
+        },
+        computed(){
+
+        },
+        created() {
+            this.user = Auth.getUser();
+        },
         asyncData(){
             return axios.all([channelApi.getList(),problemApi.list("hotlist",0,1,5),gatheringApi.search(1,4,{"state":"1"}),imageApi.getImgs()]).then(axios.spread((res1,res2,res3,res4)=>{
                 return {
                     channellist:res1.data.data.rows,
                     hotlist:res2.data.data.rows,
                     gatheringlist:res3.data.data.rows,
-                    img:res4.data.data
+                    img:res4.data.data,
+                    user: Auth.getUser()
                 }
             }))
         },

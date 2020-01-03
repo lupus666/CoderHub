@@ -53,7 +53,7 @@
     import '@/assets/css/page-headline-logined.css'
     import articleApi from "@/api/article";
     import imageApi from "@/api/image";
-    import axios from 'axios'
+    import axios from 'axios';
 
     export default {
         name: "_id",
@@ -66,19 +66,37 @@
         mounted() {
             window.addEventListener('scroll', this.handleScroll, true)
         },
-        asyncData({params}) {
+        asyncData({params, query}) {
             let searchmap={};
+            let arr = Object.keys(query)
+            console.log(query !== undefined);
+            console.log(query);
             if (params.id == 0) {
-                searchmap = {"istop": "1"}
+                if (arr.length !== 0){
+                    // console.log(1)
+                    searchmap = {'title': query.keywords};
+                }
+                else{
+                    // console.log(2)
+                    searchmap = {"istop": "1"};
+                }
             } else {
-                searchmap = {"channelid": params.id.toString()}
+                if (arr.length !== 0){
+                    // console.log(params.id.toString() + '1');
+                    searchmap = {'title': query.keywords};
+                }
+                else{
+                    // console.log(params.id.toString() + '2');
+                    searchmap = {"channelid": params.id.toString()}
+                }
             }
             return axios.all([articleApi.getList(1, 10, searchmap), imageApi.getImgs()]).then(
                 axios.spread((res, res2) => {
                     return {
                         articles: res.data.data.rows,
                         channelId: params.id,
-                        img: res2.data.data
+                        img: res2.data.data,
+                        query: query
                     }
                 })
             )
@@ -95,10 +113,18 @@
             },
             loadMore() {
                 let searchmap={};
+                let arr = Object.keys(this.query)
+
                 if (this.channelId == 0) {
-                    searchmap = {"istop": "1"}
+                    if (arr.length !== 0)
+                        searchmap = {'title': query.keywords};
+                    else
+                        searchmap = {"istop": "1"};
                 } else {
-                    searchmap = {"channelid": params.id.toString()}
+                    if (arr.length !== 0)
+                        searchmap = {'title': query.keywords};
+                    else
+                        searchmap = {"channelid": params.id.toString()}
                 }
                 this.curPage++;
                 articleApi.getList(this.curPage, 10, searchmap).then(response => {

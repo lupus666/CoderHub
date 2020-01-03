@@ -11,8 +11,14 @@
     import gatheringApi from "@/api/gathering";
     import axios from 'axios'
     export default {
+        data(){
+            return{
+                query: {}
+            }
+        },
         created() {
-            this.$router.push("/highlight/channel/0")
+            this.query = this.$route.query;
+            this.$router.push({path:"/highlight/channel/0", query:this.query})
         }
     }
 </script>
