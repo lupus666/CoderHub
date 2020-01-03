@@ -37,6 +37,7 @@
             <nuxt-link to="/manager" tag="li" active-class="active" exact><a>我的主页</a></nuxt-link>
             <nuxt-link to="/manager/myquestion" tag="li" active-class="active"><a>我的提问</a></nuxt-link>
             <nuxt-link to="/manager/myanswer" tag="li" active-class="active"><a>我的回答</a></nuxt-link>
+            <nuxt-link to="/manager/myhistory" tag="li" active-class="active"><a>浏览记录</a></nuxt-link>
             <nuxt-link to="/manager/account" tag="li" active-class="active"><a>账户设置</a></nuxt-link>
           </ul>
           <ul class="home-list bottom">
