@@ -51,19 +51,19 @@
     <property name="ts.external.directory.path" value="D:\intellij\IntelliJ IDEA 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\19028\IdeaProjects\CoderHub\assets\css" />
+      <recent name="D:\Users\19028\IdeaProjects\CoderHub\pages\manager" />
+      <recent name="D:\learning\3_1\软件工程\CoderHub\pages\highlight" />
+      <recent name="D:\Document\course\javaEE\coderhub\CoderHubWeb\CoderHub\static" />
+      <recent name="D:\Document\course\javaEE\coderhub\CoderHubWeb\CoderHub\assets\plugins\share" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Document\course\javaEE\coderhub\starter-template-master\template\assets\img" />
       <recent name="D:\Document\course\javaEE\coderhub\starter-template-master\template\pages\highlight\channel" />
       <recent name="D:\Document\course\javaEE\coderhub\starter-template-master\template\pages\highlight" />
       <recent name="D:\Document\course\javaEE\coderhub\starter-template-master\template\pages\highlight\item" />
       <recent name="D:\Document\course\javaEE\coderhub\starter-template-master\template\pages\manager" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\learning\3_1\软件工程\CoderHub\pages\highlight" />
-      <recent name="D:\Document\course\javaEE\coderhub\CoderHubWeb\CoderHub\static" />
-      <recent name="D:\Document\course\javaEE\coderhub\CoderHubWeb\CoderHub\assets\plugins\share" />
-      <recent name="D:\Document\course\javaEE\coderhub\starter-template-master\template\api" />
-      <recent name="D:\Document\course\javaEE\coderhub\starter-template-master\template\assets" />
     </key>
   </component>
   <component name="ServiceViewManager">

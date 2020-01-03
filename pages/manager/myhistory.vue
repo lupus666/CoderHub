@@ -5,7 +5,6 @@
       <ul class="answer-list">
         <li v-for="(item,index) in histories" :key="index">
           <span class="title"><a :href="`/article/item/${item.articleid}`">{{item.articletitle}}</a></span>
-<!--          <span class="fr date">{{item.createtime}}</span> -->
           <span class="clearfix"></span>
         </li>
       </ul>
