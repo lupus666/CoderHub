@@ -44,5 +44,11 @@ export default {
       method: 'put',
       data: info
     })
+  },
+  getHistory(page, size) {
+    return request({
+      url: `/${group_name}/${api_name}/articleHistory/1/10`,
+      method: 'get',
+    })
   }
 }
