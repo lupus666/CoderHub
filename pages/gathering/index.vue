@@ -15,7 +15,7 @@
                 <a :href="`/Iwork/gathering/item/${item.id}`" target="_blank"><img :src="item.image" alt="" /></a>
               </div>
               <div class="text">
-                <p class="title">{{item.name}}</p>
+                <p class="title">{{item.name.slice(0, 15)}}</p>
                 <div class="fl goin">
                   <p>时间：{{item.starttime}}</p>
                   <p>城市：{{item.city}}</p>
