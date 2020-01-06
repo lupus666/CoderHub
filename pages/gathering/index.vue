@@ -15,7 +15,8 @@
                 <a :href="`/Iwork/gathering/item/${item.id}`" target="_blank"><img :src="item.image" alt="" /></a>
               </div>
               <div class="text">
-                <p class="title">{{item.name.slice(0, 15)}}</p>
+                <p class="title" v-if="item.name.length > 14">{{item.name.slice(0, 14) + "..."}}</p>
+                  <p class="title" v-else> {{item.name}} </p>
                 <div class="fl goin">
                   <p>时间：{{item.starttime}}</p>
                   <p>城市：{{item.city}}</p>
