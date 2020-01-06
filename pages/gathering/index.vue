@@ -66,7 +66,7 @@
             loadMore(){
                 this.pageNo++;
                 gatheringApi.search(this.pageNo, 12, {state: '1'}).then(response => {
-                    this.items = this.items.concat(response.data.data.rows, this.items);
+                    this.items = this.items.concat(response.data.data.rows);
                     this.busy = false;
                 })
             },
