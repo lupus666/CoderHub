@@ -39,7 +39,7 @@
               </div>
             </nuxt-link>
             <p class="content">
-              {{item.content}}</p></li>
+              {{item.content.slice(0, 30)}}</p></li>
         </ul>
         <ul id="loaded" class="headline">
         </ul>

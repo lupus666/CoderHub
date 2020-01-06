@@ -104,7 +104,7 @@
                 userApi.login(this.mobile, this.password).then(response=>{
                     if (response.data.flag){
                         Auth.setUser(response.data.data.token, response.data.data.name, response.data.data.avatar);
-                        location.href = '/manager'//用户中心
+                        location.href = '/Iwork/manager'//用户中心
                     }else {
                         this.$message({
                             message: response.data.message,

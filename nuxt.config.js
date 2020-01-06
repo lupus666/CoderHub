@@ -2,6 +2,9 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  router:{
+      base: '/Iwork/'
+  },
   head: {
     title: 'coderhub',
     meta: [

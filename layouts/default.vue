@@ -4,7 +4,7 @@
       <div class="wrapper">
       <div class="sui-navbar">
         <div class="navbar-inner">
-          <a href="/" class="sui-brand"><img src="~/assets/img/logo.png" style="margin-top: 5px" width="165px" height="80px" alt="社交"/></a>
+          <a href="/Iwork/" class="sui-brand"><img src="~/assets/img/logo.png" style="margin-top: 5px" width="165px" height="80px" alt="社交"/></a>
           <ul class="sui-nav">
             <nuxt-link tag="li" :to="{ path:'/highlight'}" active-class="active" @click.native="activeChannel='highlight'" ><a>文章</a></nuxt-link>
             <nuxt-link tag="li" :to="{ path:'/qa'}" active-class="active" @click.native="activeChannel='qa'"><a>问答</a></nuxt-link>
@@ -19,9 +19,9 @@
               <span class="btn-search fa fa-search" @click="search"/>
           </form>
           <div class="sui-nav pull-right info" v-if="user.name !== undefined">
-            <li><a href="/manager" target="_blank" class="notice">{{user.name}}</a></li>
+            <li><a href="/Iwork/manager" target="_blank" class="notice">{{user.name}}</a></li>
             <li><a @click="logout" class="notice">退出登录</a></li>
-            <li><a href="/manager" target="_blank" class="homego"><img :src="user.avatar" alt="用户头像"></a></li>
+            <li><a href="/Iwork/manager" target="_blank" class="homego"><img :src="user.avatar" alt="用户头像"></a></li>
           </div>
           <div class="sui-nav pull-right info" v-if="user.name === undefined">
             <nuxt-link to="/login">请登录</nuxt-link>
@@ -38,13 +38,13 @@
             <div class="link">
               <dl>
                 <dt>小组成员</dt>
-                <dd>wxn</dd>
                 <dd>czd</dd>
-                <dd>fxp</dd>
-                <dd>pjr</dd>
+                <dd>hyl</dd>
+                <dd>lps</dd>
+                <dd>zyc</dd>
               </dl>
               <dl>
-                <dt>JavaEE</dt>
+                <dt>SoftwareEngineering</dt>
               </dl>
               <dl>
                 <dt>联系我们</dt>
@@ -90,7 +90,7 @@
         methods:{
             logout(){
                 Auth.removeUser();
-                location.href='/';
+                location.href='/Iwork/';
             },
             search(){
                 console.log(this.activeChannel);
