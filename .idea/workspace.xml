@@ -4,7 +4,10 @@
     <list default="true" id="ed0bf377-1999-48a5-acf6-7a75770c8913" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 17bb8d3aa0917b439d28c327eabd4f509c24c3ce
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/highlight/recommend.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/highlight/recommend.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/request.js" afterDir="false" />
