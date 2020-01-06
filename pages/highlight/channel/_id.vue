@@ -1,31 +1,18 @@
 <template>
   <div class="right-content">
     <div class="fl middle">
-      <div class="carousel">
-        <div id="myCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="active item">
-              <img :src="this.img[2]"/>
-            </div>
-            <div class="item">
-              <img src="~/assets/img/widget-banner02.png"/>
-            </div>
-            <div class="item">
-              <img src="~/assets/img/widget-banner01.png"/>
-            </div>
-          </div>
-        </div>
+      <div class="block">
+        <el-carousel height="400px">
+          <el-carousel-item v-for="item in this.imgList" :key="item">
+            <img :src="item"/>
+          </el-carousel-item>
+        </el-carousel>
       </div>
       <div class="data-list">
         <ul class="headline fixed" id="headline">
           <li class="headline-item" v-for="(item,index) in articles" :key="index">
             <div class="fl indexImg">
-              <img :src="item.image"/>
+              <img :src="item.image"/> <!--todo-->
             </div>
             <nuxt-link :to="`/article/item/${item.id}`">
               <div class="words">
@@ -38,13 +25,13 @@
                 </h5>
               </div>
             </nuxt-link>
-            <p class="content">
-              {{item.content.slice(0, 30) + "..."}}</p></li>
+            <p class="content"></p>
+          </li>
         </ul>
         <ul id="loaded" class="headline">
         </ul>
       </div>
-      <!-- <script src="~/assets/data-list.js" type="text/javascript"></script> -->
+       <script src="~/assets/data-list.js" type="text/javascript"></script>
     </div>
   </div>
 </template>
@@ -61,6 +48,11 @@
             return {
                 curPage: 1,
                 busy: false,
+                imgList: {
+                  img1: "http://q2tjj3jyx.bkt.clouddn.com/1.png",
+                  img2: "http://q2tjj3jyx.bkt.clouddn.com/2.png",
+                  img3: "http://q2tjj3jyx.bkt.clouddn.com/3.png"
+                }
             }
         },
         mounted() {

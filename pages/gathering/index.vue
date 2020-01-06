@@ -12,7 +12,7 @@
             <div class="activity-inner">
               <a href="http://"></a>
               <div class="img">
-                <a :href="`/Iwork/gathering/item/${item.id}`" target="_blank"><img :src="item.image" alt="" /></a>
+                <a :href="`./gathering/item/${item.id}`" target="_blank"><img :src="item.image" alt="" /></a>
               </div>
               <div class="text">
                 <p class="title" v-if="item.name.length > 14">{{item.name.slice(0, 14) + "..."}}</p>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="clearfix"></div>
               </div>
-            </div> 
+            </div>
           </li>
         </ul>
       </div>
