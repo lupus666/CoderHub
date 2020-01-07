@@ -9,7 +9,7 @@
             <nuxt-link tag="li" :to="{ path:'/highlight'}" active-class="active" @click.native="activeChannel='highlight'" ><a>文章</a></nuxt-link>
             <nuxt-link tag="li" :to="{ path:'/qa'}" active-class="active" @click.native="activeChannel='qa'"><a>问答</a></nuxt-link>
             <nuxt-link tag="li" :to="{ path:'/gathering'}" active-class="active" @click.native="activeChannel='gathering'"><a>活动</a></nuxt-link>
-            <nuxt-link tag="li" :to="{ path:'/spit'}" active-class="active" @click.native="activeChannel='spit'"><a>吐槽</a></nuxt-link>
+            <nuxt-link tag="li" :to="{ path:'/spit'}" active-class="active" @click.native="activeChannel='spit'"><a>树洞</a></nuxt-link>
             <nuxt-link tag="li" :to="{ path:'/recruit'}" active-class="active" @click.native="activeChannel='recruit'"><a>招聘</a></nuxt-link>
           </ul>
           <form class="sui-form sui-form pull-left">

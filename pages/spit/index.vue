@@ -33,8 +33,8 @@
         </div>
         <div class="fl right-tag">
           <div class="block-btn">
-            <p>来个匿名吐槽，发泄一下你心中的怒火吧！</p>
-            <nuxt-link to="/spit/submit"><a class="sui-btn btn-block btn-share">发吐槽</a></nuxt-link>
+            <p>来个匿名动态，谈谈你的心事吧！</p>
+            <nuxt-link to="/spit/submit"><a class="sui-btn btn-block btn-share">发动态</a></nuxt-link>
           </div>
         </div>
         <div class="clearfix"></div>
