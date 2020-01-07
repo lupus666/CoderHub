@@ -4,7 +4,7 @@
       <div class="wrapper tag-item">
         <div class="job-intro">
           <div class="left-img">
-            <img :src="enterpriseItem.image" alt="" />
+            <img :src="this.enterpriseItem.logo" alt="" />
           </div>
           <div class="middle-intro">
             <div class="name">
@@ -56,6 +56,7 @@
             </div>
           </div>
         </div>
+        <div class="clearfix"></div>
       </div>
 
     </div>

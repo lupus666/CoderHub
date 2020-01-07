@@ -4,7 +4,7 @@
       <div class="wrapper">
       <div class="sui-navbar">
         <div class="navbar-inner">
-          <a href="/Iwork/" class="sui-brand"><img src="~/assets/img/logo.png" style="margin-top: 5px" width="165px" height="80px" alt="社交"/></a>
+          <a href="/Iwork/" class="sui-brand"><img src="http://q2tjj3jyx.bkt.clouddn.com/Iwork1.png" style="margin-top: 5px" width="165px" height="42px" alt="社交"/></a>
           <ul class="sui-nav">
             <nuxt-link tag="li" :to="{ path:'/highlight'}" active-class="active" @click.native="activeChannel='highlight'" ><a>文章</a></nuxt-link>
             <nuxt-link tag="li" :to="{ path:'/qa'}" active-class="active" @click.native="activeChannel='qa'"><a>问答</a></nuxt-link>

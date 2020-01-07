@@ -11,7 +11,7 @@
             <p>开始时间： {{item.starttime}}</p>
             <p>结束时间： {{item.endtime}}</p>
             <p>举办地点： {{item.address}}</p>
-            <p>主办方：{{item.sponsor}}</p>
+            <p>主办方   ：{{item.sponsor}}</p>
             <p>报名截止： {{item.enrolltime}}</p>
             <div class="join">
               <button class="sui-btn btn-danger" @click="attend">立即报名</button>
