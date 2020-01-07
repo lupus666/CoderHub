@@ -134,13 +134,13 @@
         </div>
         <div class="tags">
           <ul class="sui-tag">
-            <li>Php</li>
-            <li>Javascript</li>
-            <li>Gif</li>
-            <li>Java</li>
-            <li>C#</li>
-            <li>iOS</li>
-            <li>C++</li>
+            <li>技术</li>
+            <li>设计</li>
+            <li>金融</li>
+            <li>汽车</li>
+            <li>医疗</li>
+            <li>建筑</li>
+<!--            <li>C++</li>-->
           </ul>
         </div>
       </div>
